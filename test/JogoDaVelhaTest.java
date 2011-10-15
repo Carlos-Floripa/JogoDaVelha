@@ -189,8 +189,35 @@ public class JogoDaVelhaTest {
 	public void naoDeveConfirmarGanhadorXisTerceiraLinhaIncompleta() throws Exception {
 		String[][] tabuleiroInicial = new String[][] {{"", "", ""}, 
 										  			  {"", "", ""}, 
-										  			  {"", "X", "X"}};
+										  			  {"", "X","X"}};
 		boolean existeGanhador = JogoDaVelha.existeGanhador(tabuleiroInicial, "X");
 		assertFalse(existeGanhador);
+	}
+	
+	@Test
+	public void deveConfirmarGanhadorXisDiagonal() throws Exception {
+		String[][] tabuleiroInicial = new String[][] {{"","", "X"}, 
+										  			  {"", "X", ""}, 
+										  			  {"X", "", ""}};
+		boolean existeGanhador = JogoDaVelha.existeGanhador(tabuleiroInicial, "X");
+		assertTrue(existeGanhador);
+	}
+	
+	@Test
+	public void deveConfirmarGanhadorBolaDiagonal() throws Exception {
+		String[][] tabuleiroInicial = new String[][] {{"O", "", ""}, 
+										  			  {"", "O", ""}, 
+										  			  {"", "", "O"}};
+		boolean existeGanhador = JogoDaVelha.existeGanhador(tabuleiroInicial, "O");
+		assertTrue(existeGanhador);
+	}
+	@Test
+	public void deveConfirmarGanhadorXisPrimeiraColuna() throws Exception {
+		String[][] tabuleiroInicial = new String[][] {{"X", "", ""}, 
+										  			  {"X", "", ""}, 
+										  			  {"X", "", ""}};
+		boolean existeGanhador = JogoDaVelha.existeGanhador(tabuleiroInicial, "X");
+		
+		assertTrue(existeGanhador);
 	}
 }
