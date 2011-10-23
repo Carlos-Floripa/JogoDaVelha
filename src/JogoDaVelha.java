@@ -20,10 +20,10 @@ public class JogoDaVelha {
 			mostraTabuleiro(t);
 			if(existeGanhador(t,"X")||(existeGanhador(t,"O"))||tabuleiroCheio(t)){				
 				if(existeGanhador(t,"X")){
-					System.out.println("Jogador Xis Ganhou");
+					System.out.println("Jogador Xis Ganhou ");
 				}
 				if(existeGanhador(t,"O")){
-					System.out.println("Jogador bola Ganhou");
+					System.out.println("Jogador bola Ganhou ");
 				}else
 					System.out.println("Fim de Jogo");
 				controle=false;
